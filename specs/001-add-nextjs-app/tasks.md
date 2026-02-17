@@ -12,10 +12,11 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 
 - [ ] T001 Create Next.js (TypeScript) project skeleton and base files in `package.json`, `tsconfig.json`, `next.config.mjs`, `src/app/page.tsx`
 - [ ] T002 Initialize `package.json` scripts (`dev`, `build`, `start`, `test`, `test:watch`, `e2e:headless`, `e2e:edge`) in `package.json`
-- [ ] T003 [P] Configure ESLint and Prettier (`.eslintrc.cjs`, `.prettierrc`) to match repo standards
+- [ ] T003 [P] Configure ESLint and Prettier (`.eslintrc.cjs`, `.prettierrc`) to match repo standards — maps to NFR-001 (code quality)
 - [ ] T004 [P] Add TypeScript config and path aliases in `tsconfig.json`
 - [ ] T005 [P] Configure unit test framework (Jest + React Testing Library): add `jest.config.ts`, `src/setupTests.ts`, and example test folder `src/__tests__/` 
 - [ ] T006 [P] Configure Playwright Test Runner and BDD test folder structure: add `playwright.config.ts`, `playwright/`, and `playwright/e2e/` directory
+- [ ] T031 Create PR template and PR-checklist to enforce constitution PR metadata (spec link, tests, risk assessment) — maps to constitution governance
 
 ---
 
@@ -91,7 +92,7 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 **Purpose**: Improvements and cross-cutting tasks that affect multiple stories
 
 - [ ] T026 [P] Add automated accessibility checks (axe-core) for `Home` page in unit or E2E tests (`tests/a11y/`)
-- [ ] T027 [P] Add lint/prettier pre-commit hook and CI lint step (`.husky/pre-commit`, `package.json`)
+- [ ] T027 [P] Add lint/prettier pre-commit hook and CI lint step (`.husky/pre-commit`, `package.json`) — maps to NFR-001 (code quality)
 - [ ] T028 [P] Documentation updates: `README.md`, `specs/001-add-nextjs-app/quickstart.md`, `docs/`
 - [ ] T029 [P] Add Playwright HTML report publishing step to CI and include failure screenshots (`.github/workflows/e2e.yml`)
 - [ ] T030 [P] Run quickstart validation and mark `specs/001-add-nextjs-app/quickstart.md` verified

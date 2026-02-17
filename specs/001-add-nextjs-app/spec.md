@@ -1,9 +1,9 @@
-# Feature Specification: [FEATURE NAME]
+# Feature Specification: Initialize Next.js app — BallotBuilder
 
-**Feature Branch**: `[###-feature-name]`  
-**Created**: [DATE]  
-**Status**: Draft  
-**Input**: User description: "$ARGUMENTS"
+**Feature Branch**: `001-add-nextjs-app`  
+**Created**: 2026-02-16  
+**Status**: Final  
+**Input**: User description: "Create a new Next.JS App called BallotBuilder. In order to test this app, we will use Jest and the React Testing Library for component testing. For Integration/E2E testing, we will use Playwright. This initial project should include a basic Playwright test that validates that the application loads. There should be a command to run the E2E tests in a headless state and a second command for running them with a browser. Our default browser will be MS Edge"
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -77,10 +77,15 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 - **FR-008**: Documentation MUST include run instructions for unit tests and E2E tests (headless + headed) and notes about browser dependencies.
 - **FR-009**: Project language/tooling: **TypeScript** (selected by stakeholder)
 
+### Non-Functional Requirements
+
+- **NFR-001 (Code quality)**: Project MUST use ESLint + Prettier, include a pre-commit hook (Husky) to run lint/format checks, and provide a CI lint step. Acceptance: CI `lint` job passes and the pre-commit hook prevents commits with lint errors. Traceability: mapped to tasks T003, T027, T031.
+
+- **NFR-002 (Accessibility)**: Home page MUST have zero critical/serious accessibility violations as measured by `axe-core` rules; include an automated a11y check in CI and a keyboard navigation acceptance test. Acceptance: automated `axe` run reports no critical/serious violations and the keyboard focus-order test passes. Traceability: mapped to tasks T011, T026.
+
 ### Key Entities *(include if feature involves data)*
 
-- **[Entity 1]**: [What it represents, key attributes without implementation]
-- **[Entity 2]**: [What it represents, relationships to other entities]
+- N/A for the initial scaffold — no persistent entities required. Add entities to `data-model.md` when persistence is introduced.
 
 ## Success Criteria *(mandatory)*
 
@@ -91,6 +96,7 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 - **SC-003**: `npm run e2e:headless` completes successfully in CI (headless MS Edge) with the smoke test passing.
 - **SC-004**: `npm run e2e:edge` (headed) runs Playwright using MS Edge and the smoke test passes locally.
 - **SC-005**: At least one BDD acceptance scenario (home page loads) is recorded in the spec and is executable by Playwright.
+- **SC-006**: Home page must report zero *critical* or *serious* accessibility violations when scanned with `axe-core`, and an automated keyboard navigation acceptance test must pass in CI.
 
 ## Assumptions
 
@@ -139,4 +145,4 @@ Scenario: Home page loads
 
 ---
 
-**Ready for planning**: This spec is ready for `/speckit.plan` once the TypeScript vs JavaScript clarification (FR-009) is resolved.
+**Ready for planning**: This spec is finalized and ready for `/speckit.plan`. Proceed to planning or implementation.
