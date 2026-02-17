@@ -3,6 +3,8 @@
 Auto-generated from all feature plans. Last updated: 2026-02-16
 
 ## Active Technologies
+- JavaScript / TypeScript — Node.js 18.x (recommended) + Next.js ^13.4.x, React 18; Jest, Playwright for tests (002-dockerize-app)
+- N/A (no persistent-data changes) (002-dockerize-app)
 
 - TypeScript (TS 5.x), Node.js 20.x (LTS) + Next.js (latest stable), React, Jest, React Testing Library, Playwright Test Runner, ESLint, Prettier (001-add-nextjs-app)
 
@@ -23,6 +25,7 @@ npm test; npm run lint
 TypeScript (TS 5.x), Node.js 20.x (LTS): Follow standard conventions
 
 ## Recent Changes
+- 002-dockerize-app: Added JavaScript / TypeScript — Node.js 18.x (recommended) + Next.js ^13.4.x, React 18; Jest, Playwright for tests
 
 - 001-add-nextjs-app: Added TypeScript (TS 5.x), Node.js 20.x (LTS) + Next.js (latest stable), React, Jest, React Testing Library, Playwright Test Runner, ESLint, Prettier
 
