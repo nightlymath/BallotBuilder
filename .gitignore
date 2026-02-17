@@ -328,3 +328,16 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# Next.js / Node.js common
+.next/
+out/
+dist/
+coverage/
+playwright-report/
+.env*
+.DS_Store
+Thumbs.db
+.vscode/
+# keep node_modules rule from Visual Studio template
+node_modules/
