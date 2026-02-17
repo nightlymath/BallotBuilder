@@ -70,7 +70,7 @@ description: 'Tasks for feature: Initialize Next.js app — BallotBuilder'
 
 - [x] T019 [US2] Implement `Home` unit/component code (if missing) and ensure `src/__tests__/Home.test.tsx` passes
 - [ ] T020 [US2] Add `test:watch` script and document local test workflow in `README.md`
-- [ ] T021 [US2] Ensure unit tests run in CI (`.github/workflows/e2e.yml` or CI pipeline) and add badges/documentation in `README.md`
+- [x] T021 [US2] Ensure unit tests run in CI (`.github/workflows/e2e.yml` or CI pipeline) and add badges/documentation in `README.md`
 
 **Checkpoint**: US2 complete when `npm test` exits 0 and one or more unit tests validate `Home` component behaviour.
 
