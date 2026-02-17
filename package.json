@@ -11,6 +11,7 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:a11y": "jest --config=jest.a11y.config.js",
+    "prepare": "husky install",
     "e2e:headless": "npx playwright test --project=edge --reporter=dot",
     "e2e:edge": "npx playwright test --project=edge"
   },
@@ -21,17 +22,20 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",
-    "@testing-library/react": "^14.0.0",
     "@testing-library/jest-dom": "^5.16.5",
-    "jest": "^29.4.0",
-    "ts-jest": "^29.0.0",
-    "typescript": "^5.3.0",
-    "eslint": "^8.40.0",
-    "@typescript-eslint/parser": "^5.59.0",
+    "@testing-library/react": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
-    "eslint-plugin-react": "^7.33.1",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.33.1",
+    "jest": "^29.4.0",
+    "jest-axe": "^10.0.0",
+    "jest-environment-jsdom": "^30.2.0",
     "prettier": "^2.8.0",
-    "jest-axe": "^6.2.1"
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.2",
+    "husky": "^8.0.0",
+    "typescript": "^5.3.0"
   }
 }

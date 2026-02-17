@@ -1,0 +1,15 @@
+.next
+out
+dist
+build
+coverage
+playwright-report
+node_modules
+package-lock.json
+.vscode
+.husky
+.specify/memory
+.specify/templates
+.github/agents
+.next/types
+*.min.js
