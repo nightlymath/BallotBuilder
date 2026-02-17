@@ -5,9 +5,10 @@
 **Status**: Final  
 **Input**: User description: "Create a new Next.JS App called BallotBuilder. In order to test this app, we will use Jest and the React Testing Library for component testing. For Integration/E2E testing, we will use Playwright. This initial project should include a basic Playwright test that validates that the application loads. There should be a command to run the E2E tests in a headless state and a second command for running them with a browser. Our default browser will be MS Edge"
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Scaffold & smoke E2E (Priority: P1)
+
 As a developer, I want a runnable Next.js scaffold so I can start local development and verify the app loads.
 
 **Why this priority**: Provides the minimal runnable product and enables all downstream testing.
@@ -15,12 +16,14 @@ As a developer, I want a runnable Next.js scaffold so I can start local developm
 **Independent Test**: Run `npm run dev` and execute the Playwright smoke test (`npm run e2e:headless`) which verifies `/` returns a valid page.
 
 **Acceptance Scenarios**:
+
 1. **Given** the repository is cloned and dependencies installed, **When** the developer runs `npm run dev`, **Then** the dev server starts and `GET /` returns HTTP 200 and shows the home page heading.
 2. **Given** the dev server is running, **When** the Playwright smoke test runs, **Then** it navigates to `/` and asserts the main heading or welcome text is visible.
 
 ---
 
 ### User Story 2 - Unit & component tests (Priority: P1)
+
 As a developer, I want Jest + React Testing Library configured with at least one example test so unit/component changes are validated automatically.
 
 **Why this priority**: Unit tests enable safe, test-first development and validate core UI behaviour.
@@ -28,11 +31,13 @@ As a developer, I want Jest + React Testing Library configured with at least one
 **Independent Test**: Run `npm test` — at least one Jest + RTL test passes (example: `Home` component renders expected text).
 
 **Acceptance Scenarios**:
+
 1. **Given** the repository is set up, **When** `npm test` is executed, **Then** the example component test passes and the test runner exits with code 0.
 
 ---
 
 ### User Story 3 - Playwright E2E commands & CI (Priority: P2)
+
 As a developer/CI engineer, I want E2E commands for headless CI runs and headed local runs (MS Edge default) so tests can run both in CI and during local debugging.
 
 **Why this priority**: Ensures cross-environment verification and developer ergonomics.
@@ -40,27 +45,28 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 **Independent Test**: Run `npm run e2e:headless` in CI (headless MS Edge) and `npm run e2e:edge` locally (headed MS Edge); both must pass the smoke test.
 
 **Acceptance Scenarios**:
+
 1. **Given** Playwright is installed and configured, **When** `npm run e2e:headless` is executed in CI, **Then** the smoke E2E test completes successfully.
 2. **Given** the developer runs `npm run e2e:edge`, **When** the browser launches, **Then** the smoke E2E scenario runs in MS Edge and passes.
 
 ---
 
 ### Edge Cases
+
 - CI environment missing Playwright browsers — installation step must ensure browser binaries are present.
 - Intermittent network or port conflicts — E2E config should retry or fail fast with clear error messages.
 - Flaky E2E due to timing — add retries in Playwright config for CI-only runs.
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Constitution Compliance (mandatory)
+
 - **Security & Privacy**: The spec MUST declare what data is collected, where it is stored, retention periods, and any encryption/access controls required. Include explicit acceptance tests that validate PII handling and access restrictions.
 - **Accessibility**: The spec MUST state the WCAG target level (minimum WCAG 2.1 AA) and include at least one accessibility acceptance test (keyboard navigation, screen-reader verification, or automated a11y checks).
 - **Verifiability & Auditability**: Define required audit logs, export formats, and verification mechanisms; include tests that demonstrate the audit trail for critical flows.
 - **Development methodology (TDD/BDD)**: The spec MUST indicate how Test-Driven Development (TDD) will be applied (unit/contract-first) and include Behaviour-Driven Development (BDD) acceptance scenarios for customer-facing or business-critical flows. Acceptance scenarios MUST be executable or linked to automated acceptance tests.
 - **Testing & CI**: The spec MUST list required automated tests (unit/contract/integration and BDD acceptance tests where applicable) and CI gates that will validate them.
 - **Versioning & Migration**: Describe compatibility expectations and any migration steps required for breaking changes.
-
-
 
 ### Functional Requirements
 
@@ -80,11 +86,11 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 
 - **NFR-002 (Accessibility)**: Home page MUST report zero `critical` or `serious` accessibility violations when scanned with the `axe-core` default rule set. CI MUST run automated a11y checks (e.g., `jest-axe` for unit tests or Playwright `axe-core` checks for E2E) and fail the job if any issue of severity `serious` or higher is detected. Additionally include an automated keyboard navigation test that verifies tab order and focus management on the home page. Acceptance: automated axe run reports zero `critical`/`serious` violations and the keyboard navigation test passes in CI. Traceability: mapped to tasks T011, T026.
 
-### Key Entities *(include if feature involves data)*
+### Key Entities _(include if feature involves data)_
 
 - N/A for the initial scaffold — no persistent entities required. Add entities to `data-model.md` when persistence is introduced.
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 
@@ -93,7 +99,7 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 - **SC-003**: `npm run e2e:headless` completes successfully in CI (headless MS Edge) with the smoke test passing.
 - **SC-004**: `npm run e2e:edge` (headed) runs Playwright using MS Edge and the smoke test passes locally.
 - **SC-005**: At least one BDD acceptance scenario (home page loads) is recorded in the spec and is executable by Playwright.
-- **SC-006**: Home page must report zero *critical* or *serious* accessibility violations when scanned with `axe-core`, and an automated keyboard navigation acceptance test must pass in CI.
+- **SC-006**: Home page must report zero _critical_ or _serious_ accessibility violations when scanned with `axe-core`, and an automated keyboard navigation acceptance test must pass in CI.
 
 ## Assumptions
 
@@ -117,9 +123,9 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 Feature: Home page
 
 Scenario: Home page loads
-  Given the development server is running on http://localhost:3000
-  When the browser navigates to "/"
-  Then the page loads and shows "Welcome to BallotBuilder" or the default application heading
+Given the development server is running on http://localhost:3000
+When the browser navigates to "/"
+Then the page loads and shows "Welcome to BallotBuilder" or the default application heading
 
 ---
 
@@ -137,6 +143,7 @@ Scenario: Home page loads
 ---
 
 ### Acceptance test examples (executable)
+
 - Jest + RTL: `Home` renders welcome text.
 - Playwright (smoke): navigate to `/`, expect main heading or welcome text to be visible.
 

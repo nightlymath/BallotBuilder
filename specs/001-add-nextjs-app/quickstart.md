@@ -36,11 +36,13 @@ npm run test:a11y
 4. Run Playwright E2E
 
 Headless (CI):
+
 ```bash
 npm run e2e:headless
 ```
 
 Headed (MS Edge):
+
 ```bash
 npm run e2e:edge
 ```
@@ -58,5 +60,6 @@ npm run e2e:edge
 ```
 
 ## Troubleshooting
+
 - If Playwright cannot find MS Edge in CI, ensure `npx playwright install --with-deps` has run and the runner supports Chromium.
 - For flaky tests, Playwright `retries` is set higher in CI and `playwright-report` artifacts are produced for debugging.

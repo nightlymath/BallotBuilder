@@ -8,11 +8,11 @@ export default defineConfig({
   projects: [
     {
       name: 'edge',
-      use: { channel: 'msedge', headless: true }
-    }
+      use: { channel: 'msedge', headless: true },
+    },
   ],
   use: {
     baseURL: 'http://localhost:3000',
-    trace: 'on-first-retry'
-  }
+    trace: 'on-first-retry',
+  },
 });

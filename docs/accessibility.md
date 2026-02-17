@@ -8,10 +8,13 @@ Automated checks included in this feature:
 - Playwright `axe-core` integration for E2E accessibility smoke checks
 
 Keyboard navigation acceptance:
+
 - Tab order reaches the main interactive elements and the page heading receives focus when appropriate.
 
 CI enforcement:
+
 - CI will fail the job when `jest-axe` or Playwright axe checks report `serious` or `critical` violations.
 
 Manual testing guidance:
+
 - Run `npm run test:a11y` or use the Playwright recorder to validate focus order and screen-reader behaviour.
