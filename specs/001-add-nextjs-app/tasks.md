@@ -1,5 +1,5 @@
 ---
-description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
+description: 'Tasks for feature: Initialize Next.js app — BallotBuilder'
 ---
 
 # Tasks: Initialize Next.js app — BallotBuilder
@@ -14,7 +14,7 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 - [x] T002 Initialize `package.json` scripts (`dev`, `build`, `start`, `test`, `test:watch`, `e2e:headless`, `e2e:edge`) in `package.json`
 - [x] T003 [P] Configure ESLint and Prettier (`.eslintrc.cjs`, `.prettierrc`) to match repo standards — maps to NFR-001 (code quality)
 - [x] T004 [P] Add TypeScript config and path aliases in `tsconfig.json`
-- [x] T005 [P] Configure unit test framework (Jest + React Testing Library): add `jest.config.ts`, `src/setupTests.ts`, and example test folder `src/__tests__/` 
+- [x] T005 [P] Configure unit test framework (Jest + React Testing Library): add `jest.config.ts`, `src/setupTests.ts`, and example test folder `src/__tests__/`
 - [x] T006 [P] Configure Playwright Test Runner and BDD test folder structure: add `playwright.config.ts`, `playwright/`, and `playwright/e2e/` directory
 - [x] T031 Create PR template and PR-checklist to enforce constitution PR metadata (spec link, tests, risk assessment) — maps to constitution governance
 
@@ -24,7 +24,7 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 
 **Purpose**: Core infra that MUST be complete before user stories are implemented (TDD/BDD gates, CI Playwright setup, accessibility baseline)
 
-- [x] T007 Setup Playwright project for MS Edge in `playwright.config.ts` (`projects: [{ name: 'edge', use: { channel: 'msedge' } }]`) 
+- [x] T007 Setup Playwright project for MS Edge in `playwright.config.ts` (`projects: [{ name: 'edge', use: { channel: 'msedge' } }]`)
 - [x] T008 [P] Create failing test skeletons for TDD: `src/__tests__/Home.test.tsx` (Jest) and `playwright/e2e/home.spec.ts` (Playwright)
 - [x] T009 [P] Create BDD acceptance skeleton file `features/home.feature` (BDD scenario for "Home page loads")
 - [x] T010 Add initial CI workflow to install Playwright browsers and run headless E2E (authoritative CI job): `.github/workflows/e2e.yml`
@@ -42,10 +42,12 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 **Independent Test**: `npm run dev` → `npm run e2e:headless` (Playwright smoke test) → passes
 
 ### Tests (TDD / BDD first)
+
 - [x] T013 [P] [US1] Add BDD acceptance scenario for Home page in `features/home.feature` (must fail before implementation)
 - [x] T014 [P] [US1] Add Playwright smoke test that implements BDD steps in `playwright/e2e/home.spec.ts` (must fail first)
 
 ### Implementation
+
 - [x] T015 [US1] Implement `Home` component in `src/components/Home.tsx` and wire into `src/app/page.tsx` (make Playwright smoke test pass)
 - [ ] T016 [US1] Add minimal styling/content and ensure heading text used in BDD (`src/components/Home.tsx`, `src/styles/`)
 - [ ] T017 [US1] Update `specs/001-add-nextjs-app/quickstart.md` with exact run steps for the smoke E2E
@@ -61,9 +63,11 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 **Independent Test**: `npm test` → passes example `Home` component test
 
 ### Tests (TDD)
+
 - [x] T018 [P] [US2] Write failing Jest + RTL test for `Home` component in `src/__tests__/Home.test.tsx` (TDD)
 
 ### Implementation
+
 - [x] T019 [US2] Implement `Home` unit/component code (if missing) and ensure `src/__tests__/Home.test.tsx` passes
 - [ ] T020 [US2] Add `test:watch` script and document local test workflow in `README.md`
 - [ ] T021 [US2] Ensure unit tests run in CI (`.github/workflows/e2e.yml` or CI pipeline) and add badges/documentation in `README.md`
@@ -92,10 +96,11 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 **Purpose**: Improvements and cross-cutting tasks that affect multiple stories
 
 - [ ] T026 [P] Add automated accessibility checks (axe-core) for `Home` page in unit or E2E tests (`tests/a11y/`)
-- [ ] T027 [P] Add lint/prettier pre-commit hook and CI lint step (`.husky/pre-commit`, `package.json`) — maps to NFR-001 (code quality)
+- [x] T027 [P] Add lint/prettier pre-commit hook and CI lint step (`.husky/pre-commit`, `package.json`) — maps to NFR-001 (code quality) — uses `lint-staged` to run lint/format on changed files
 - [ ] T028 [P] Documentation updates: `README.md`, `specs/001-add-nextjs-app/quickstart.md`, `docs/`
 - [ ] T029 [P] Add Playwright HTML report publishing step to CI and include failure screenshots (`.github/workflows/e2e.yml`)
 - [ ] T030 [P] Run quickstart validation and mark `specs/001-add-nextjs-app/quickstart.md` verified
+- [x] T032 Add Husky `pre-push` hook to run `lint`, `format:check` and `test` before push (local pre-push gate)
 
 ---
 
@@ -108,6 +113,7 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 - Polish: depends on completion of user stories.
 
 ### User Story Dependencies (summary)
+
 - US1 (P1): Foundation → US1
 - US2 (P1): Foundation → US2
 - US3 (P2): Foundation + US1 → US3
@@ -115,6 +121,7 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 ---
 
 ## Parallel execution examples
+
 - Developer A: Implement `Home` component (`src/components/Home.tsx`) (US1)
 - Developer B: Implement Jest test and test:watch (`src/__tests__/Home.test.tsx`) (US2)
 - Developer C: Configure Playwright `playwright.config.ts` and CI (`.github/workflows/e2e.yml`) (Foundational)
@@ -132,6 +139,7 @@ Each of the above can progress independently once Phase 2 is complete.
 ---
 
 ## Files & locations changed by tasks (high level)
+
 - `package.json`, `tsconfig.json`, `next.config.mjs`, `src/app/page.tsx`, `src/components/Home.tsx`
 - `jest.config.ts`, `src/setupTests.ts`, `src/__tests__/Home.test.tsx`
 - `playwright.config.ts`, `playwright/e2e/home.spec.ts`, `features/home.feature`
@@ -140,6 +148,7 @@ Each of the above can progress independently once Phase 2 is complete.
 ---
 
 ## Acceptance / Test criteria per story (short)
+
 - US1: Playwright smoke test (`playwright/e2e/home.spec.ts`) passes and `GET /` returns HTTP 200.
 - US2: `npm test` passes and unit test for `Home` validates expected content.
 - US3: `npm run e2e:headless` passes in CI using MS Edge; `npm run e2e:edge` runs locally.
@@ -147,6 +156,7 @@ Each of the above can progress independently once Phase 2 is complete.
 ---
 
 ## Implementation notes
+
 - Tests MUST be committed failing first (TDD). BDD scenarios should be human-readable and link to the Playwright test.
 - Use Playwright `channel: 'msedge'` to target Edge; ensure CI `npx playwright install --with-deps` is included.
 - Keep Home component minimal — text used in BDD should be stable and accessible.
