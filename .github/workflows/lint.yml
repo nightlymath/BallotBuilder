@@ -2,9 +2,9 @@ name: Lint
 
 on:
   push:
-    branches: [ main, '001-add-nextjs-app' ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   lint:
