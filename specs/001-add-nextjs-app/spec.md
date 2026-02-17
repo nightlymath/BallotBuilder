@@ -60,10 +60,7 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 - **Testing & CI**: The spec MUST list required automated tests (unit/contract/integration and BDD acceptance tests where applicable) and CI gates that will validate them.
 - **Versioning & Migration**: Describe compatibility expectations and any migration steps required for breaking changes.
 
-<!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right functional requirements.
--->
+
 
 ### Functional Requirements
 
@@ -79,9 +76,9 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 
 ### Non-Functional Requirements
 
-- **NFR-001 (Code quality)**: Project MUST use ESLint + Prettier, include a pre-commit hook (Husky) to run lint/format checks, and provide a CI lint step. Acceptance: CI `lint` job passes and the pre-commit hook prevents commits with lint errors. Traceability: mapped to tasks T003, T027, T031.
+- **NFR-001 (Code quality)**: Project MUST use ESLint + Prettier with the following presets: `eslint:recommended`, `plugin:@typescript-eslint/recommended`, `plugin:react/recommended`, and `eslint-config-prettier` to avoid rule conflicts with Prettier. Provide npm scripts `lint` and `format:check`, and include a Husky pre-commit hook that runs `npm run lint` and `npm run format:check`. CI MUST include a `lint` job that fails the build on lint or formatting errors. Acceptance: CI `lint` job passes and the pre-commit hook prevents commits with lint/format errors. Traceability: mapped to tasks T003, T027, T031.
 
-- **NFR-002 (Accessibility)**: Home page MUST have zero critical/serious accessibility violations as measured by `axe-core` rules; include an automated a11y check in CI and a keyboard navigation acceptance test. Acceptance: automated `axe` run reports no critical/serious violations and the keyboard focus-order test passes. Traceability: mapped to tasks T011, T026.
+- **NFR-002 (Accessibility)**: Home page MUST report zero `critical` or `serious` accessibility violations when scanned with the `axe-core` default rule set. CI MUST run automated a11y checks (e.g., `jest-axe` for unit tests or Playwright `axe-core` checks for E2E) and fail the job if any issue of severity `serious` or higher is detected. Additionally include an automated keyboard navigation test that verifies tab order and focus management on the home page. Acceptance: automated axe run reports zero `critical`/`serious` violations and the keyboard navigation test passes in CI. Traceability: mapped to tasks T011, T026.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -103,7 +100,7 @@ As a developer/CI engineer, I want E2E commands for headless CI runs and headed 
 - Default package manager: `npm` (unless requested otherwise).
 - Default dev server port: `3000`.
 - Default browser for Playwright: **MS Edge** (user requirement).
-- Language: **Assume TypeScript** unless user selects JavaScript (see FR-009).
+- Language: **TypeScript**.
 
 ## Commands (developer experience)
 

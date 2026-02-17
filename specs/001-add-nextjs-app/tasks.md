@@ -10,13 +10,13 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 
 **Purpose**: Project initialization and basic developer tooling (TypeScript, linting, test frameworks)
 
-- [ ] T001 Create Next.js (TypeScript) project skeleton and base files in `package.json`, `tsconfig.json`, `next.config.mjs`, `src/app/page.tsx`
-- [ ] T002 Initialize `package.json` scripts (`dev`, `build`, `start`, `test`, `test:watch`, `e2e:headless`, `e2e:edge`) in `package.json`
-- [ ] T003 [P] Configure ESLint and Prettier (`.eslintrc.cjs`, `.prettierrc`) to match repo standards — maps to NFR-001 (code quality)
-- [ ] T004 [P] Add TypeScript config and path aliases in `tsconfig.json`
-- [ ] T005 [P] Configure unit test framework (Jest + React Testing Library): add `jest.config.ts`, `src/setupTests.ts`, and example test folder `src/__tests__/` 
-- [ ] T006 [P] Configure Playwright Test Runner and BDD test folder structure: add `playwright.config.ts`, `playwright/`, and `playwright/e2e/` directory
-- [ ] T031 Create PR template and PR-checklist to enforce constitution PR metadata (spec link, tests, risk assessment) — maps to constitution governance
+- [x] T001 Create Next.js (TypeScript) project skeleton and base files in `package.json`, `tsconfig.json`, `next.config.mjs`, `src/app/page.tsx`
+- [x] T002 Initialize `package.json` scripts (`dev`, `build`, `start`, `test`, `test:watch`, `e2e:headless`, `e2e:edge`) in `package.json`
+- [x] T003 [P] Configure ESLint and Prettier (`.eslintrc.cjs`, `.prettierrc`) to match repo standards — maps to NFR-001 (code quality)
+- [x] T004 [P] Add TypeScript config and path aliases in `tsconfig.json`
+- [x] T005 [P] Configure unit test framework (Jest + React Testing Library): add `jest.config.ts`, `src/setupTests.ts`, and example test folder `src/__tests__/` 
+- [x] T006 [P] Configure Playwright Test Runner and BDD test folder structure: add `playwright.config.ts`, `playwright/`, and `playwright/e2e/` directory
+- [x] T031 Create PR template and PR-checklist to enforce constitution PR metadata (spec link, tests, risk assessment) — maps to constitution governance
 
 ---
 
@@ -24,12 +24,12 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 
 **Purpose**: Core infra that MUST be complete before user stories are implemented (TDD/BDD gates, CI Playwright setup, accessibility baseline)
 
-- [ ] T007 Setup Playwright project for MS Edge in `playwright.config.ts` (`projects: [{ name: 'edge', use: { channel: 'msedge' } }]`)
-- [ ] T008 [P] Create failing test skeletons for TDD: `src/__tests__/Home.test.tsx` (Jest) and `playwright/e2e/home.spec.ts` (Playwright)
-- [ ] T009 [P] Create BDD acceptance skeleton file `features/home.feature` (BDD scenario for "Home page loads")
-- [ ] T010 Add CI workflow to install Playwright browsers and run headless E2E: `.github/workflows/e2e.yml`
-- [ ] T011 Implement accessibility baseline & remediation plan and add `docs/accessibility.md` (WCAG 2.1 AA target documented)
-- [ ] T012 [P] Add environment / config example file `.env.example` and document port/runtime expectations in `README.md` or `specs/001-add-nextjs-app/quickstart.md`
+- [x] T007 Setup Playwright project for MS Edge in `playwright.config.ts` (`projects: [{ name: 'edge', use: { channel: 'msedge' } }]`) 
+- [x] T008 [P] Create failing test skeletons for TDD: `src/__tests__/Home.test.tsx` (Jest) and `playwright/e2e/home.spec.ts` (Playwright)
+- [x] T009 [P] Create BDD acceptance skeleton file `features/home.feature` (BDD scenario for "Home page loads")
+- [x] T010 Add initial CI workflow to install Playwright browsers and run headless E2E (authoritative CI job): `.github/workflows/e2e.yml`
+- [x] T011 Implement accessibility baseline & remediation plan and add `docs/accessibility.md` (WCAG 2.1 AA target documented)
+- [x] T012 [P] Add environment / config example file `.env.example` and document port/runtime expectations in `README.md` or `specs/001-add-nextjs-app/quickstart.md`
 
 **Checkpoint**: Foundation ready — Jest + Playwright configured, BDD skeletons in place, CI snippet present. ALL Phase 2 tasks MUST be complete before starting user story implementation.
 
@@ -42,11 +42,11 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 **Independent Test**: `npm run dev` → `npm run e2e:headless` (Playwright smoke test) → passes
 
 ### Tests (TDD / BDD first)
-- [ ] T013 [P] [US1] Add BDD acceptance scenario for Home page in `features/home.feature` (must fail before implementation)
-- [ ] T014 [P] [US1] Add Playwright smoke test that implements BDD steps in `playwright/e2e/home.spec.ts` (must fail first)
+- [x] T013 [P] [US1] Add BDD acceptance scenario for Home page in `features/home.feature` (must fail before implementation)
+- [x] T014 [P] [US1] Add Playwright smoke test that implements BDD steps in `playwright/e2e/home.spec.ts` (must fail first)
 
 ### Implementation
-- [ ] T015 [US1] Implement `Home` component in `src/components/Home.tsx` and wire into `src/app/page.tsx` (make Playwright smoke test pass)
+- [x] T015 [US1] Implement `Home` component in `src/components/Home.tsx` and wire into `src/app/page.tsx` (make Playwright smoke test pass)
 - [ ] T016 [US1] Add minimal styling/content and ensure heading text used in BDD (`src/components/Home.tsx`, `src/styles/`)
 - [ ] T017 [US1] Update `specs/001-add-nextjs-app/quickstart.md` with exact run steps for the smoke E2E
 
@@ -61,10 +61,10 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 **Independent Test**: `npm test` → passes example `Home` component test
 
 ### Tests (TDD)
-- [ ] T018 [P] [US2] Write failing Jest + RTL test for `Home` component in `src/__tests__/Home.test.tsx` (TDD)
+- [x] T018 [P] [US2] Write failing Jest + RTL test for `Home` component in `src/__tests__/Home.test.tsx` (TDD)
 
 ### Implementation
-- [ ] T019 [US2] Implement `Home` unit/component code (if missing) and ensure `src/__tests__/Home.test.tsx` passes
+- [x] T019 [US2] Implement `Home` unit/component code (if missing) and ensure `src/__tests__/Home.test.tsx` passes
 - [ ] T020 [US2] Add `test:watch` script and document local test workflow in `README.md`
 - [ ] T021 [US2] Ensure unit tests run in CI (`.github/workflows/e2e.yml` or CI pipeline) and add badges/documentation in `README.md`
 
@@ -79,7 +79,7 @@ description: "Tasks for feature: Initialize Next.js app — BallotBuilder"
 **Independent Test**: `npm run e2e:headless` (CI) and `npm run e2e:edge` (local headed) both pass
 
 - [ ] T022 [US3] Add `e2e:headless` and `e2e:edge` scripts to `package.json` (if not present)
-- [ ] T023 [US3] Add or update GitHub Actions workflow to run Playwright headless with Edge and save `playwright-report` artifacts (`.github/workflows/e2e.yml`)
+- [ ] T023 [US3] Enhance CI: add artifact collection, retry policy, and HTML report publishing for Playwright (`.github/workflows/e2e.yml`)
 - [ ] T024 [US3] Configure Playwright CI retries and artifact collection in `playwright.config.ts`
 - [ ] T025 [US3] Add developer docs for running headed Edge locally (`README.md` / `specs/001-add-nextjs-app/quickstart.md`)
 

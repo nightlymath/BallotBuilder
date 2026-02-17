@@ -1,7 +1,7 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: Initialize Next.js app — BallotBuilder
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+**Branch**: `001-add-nextjs-app` | **Date**: 2026-02-16 | **Spec**: `specs/001-add-nextjs-app/spec.md`
+**Input**: Feature specification from `specs/001-add-nextjs-app/spec.md`
 
 **Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
 
@@ -96,8 +96,7 @@ ios/ or android/
 └── [platform-specific structure: feature modules, UI flows, platform tests]
 ```
 
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
+**Structure Decision**: Single Next.js application using the App Router (files under `src/app/`). Source files and components live under `src/` with tests in `src/__tests__/` and Playwright E2E under `playwright/e2e/`.
 
 ## Complexity Tracking
 

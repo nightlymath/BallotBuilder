@@ -21,6 +21,18 @@ npm run dev
 npm test
 ```
 
+Linting
+
+```bash
+npm run lint
+```
+
+Accessibility checks (axe)
+
+```bash
+npm run test:a11y
+```
+
 4. Run Playwright E2E
 
 Headless (CI):
